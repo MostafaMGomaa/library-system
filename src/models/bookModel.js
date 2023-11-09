@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const DB = require('bcryptjs');
+const DB = require('../db');
 
 const Book = DB.define(
   'book',
@@ -33,22 +33,34 @@ const Book = DB.define(
     available_quantity: {
       type: DataTypes.SMALLINT.UNSIGNED,
       defaultValue: 1,
-      vaildate: {
-        isInt: {
-          msg: 'Must be an integer number of books',
-        },
+      validate: {
+        isInt: { msg: 'Available quantity must be an integer.' },
       },
     },
     shelf_location: {
       type: DataTypes.STRING,
       allowNull: false,
-      vaildate: {
+      validate: {
         notNull: { msg: 'Please provide shelf location for the book.' },
       },
     },
   },
   {
     timestamps: true,
+    indexes: [
+      {
+        name: 'title',
+        fields: ['title'],
+      },
+      {
+        name: 'author',
+        fields: ['author'],
+      },
+      {
+        name: 'isbn',
+        fields: ['isbn'],
+      },
+    ],
   }
 );
 
@@ -58,7 +70,7 @@ const Book = DB.define(
 */
 
 Book.beforeSave((book) => {
-  book.title = user.title.trim().toLowerCase();
+  book.title = book.title.trim().toLowerCase();
   book.author = book.author.trim().toLowerCase();
 });
 

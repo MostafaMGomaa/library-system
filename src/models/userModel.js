@@ -54,10 +54,10 @@ const User = DB.define(
 
 /*
 * this hook should :
-  - if the password is chenged 
-    - or when user regiester should insure the passwords are matched 
+  - if the password is changed 
+    - or when the user registers, ensure the passwords are matched 
     - Hash the new password
-  - Trim username and make it lowercase
+  - Trim the username and make it lowercase
 */
 
 User.beforeSave(async (user) => {

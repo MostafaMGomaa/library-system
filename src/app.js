@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 
 const userRoutes = require('./routes/userRoutes');
+const bookRoutes = require('./routes/bookRoutes');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./helpers/appError');
 
@@ -14,6 +15,7 @@ app.use(cookieParser());
 if (process.env.NODE_ENV !== 'production') app.use(morgan('dev'));
 
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/books', bookRoutes);
 
 app.all('*', (req, res, next) => {
   return next(new AppError(`Cannot find ${req.originalUrl} in server`, 404));
