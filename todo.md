@@ -2,23 +2,23 @@
 
 ## For Books:
 
-- [] Add a book with details like title, author, ISBN, available quantity, and shelf location.
-- [] Update a book's details.
-- [] Delete a book.
-- [] List all books.
-- [] Search for a book by title, author, or ISBN.
+- [OK] Add a book with details like title, author, ISBN, available quantity, and shelf location.
+- [OK] Update a book's details.
+- [OK] Delete a book.
+- [OK] List all books.
+- [OK] Search for a book by title, author, or ISBN.
 
 ## For Borrowers:
 
-- [] Register a borrower with details like name, email, and registered date (keep user details simple).
-- [] Update borrower's details.
-- [] Delete a borrower.
-- [] List all borrowers.
+- [OK] Register a borrower with details like name, email, and registered date (keep user details simple).
+- [OK] Update borrower's details.
+- [OK] Delete a borrower.
+- [OK] List all borrowers.
 
 ## Borrowing Process:
 
-- [] A borrower can check out a book. The system should keep track of which books are checked out and by whom.
-- [] A borrower can return a book.
+- []OK A borrower can check out a book. The system should keep track of which books are checked out and by whom.
+- [OK] A borrower can return a book.
 - [] A borrower can check the books they currently have.
 - [] The system should keep track of due dates for the books and list books that are overdue.
 
