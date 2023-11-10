@@ -12,7 +12,7 @@ const userRoutes = require('./routes/userRoutes');
 const bookRoutes = require('./routes/bookRoutes');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./helpers/appError');
-const bowrrowedRoutes = require('./routes/borrowedRoutes');
+const borrowedRoutes = require('./routes/borrowedRoutes');
 
 const app = express();
 
@@ -44,7 +44,7 @@ if (process.env.NODE_ENV !== 'production') app.use(morgan('dev'));
 
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/books', bookRoutes);
-app.use('/api/v1/bowrrowed', bowrrowedRoutes);
+app.use('/api/v1/borrowed', borrowedRoutes);
 
 app.all('*', (req, res, next) => {
   return next(new AppError(`Cannot find ${req.originalUrl} in server`, 404));

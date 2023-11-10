@@ -17,10 +17,10 @@
 
 ## Borrowing Process:
 
-- []OK A borrower can check out a book. The system should keep track of which books are checked out and by whom.
+- [OK] A borrower can check out a book. The system should keep track of which books are checked out and by whom.
 - [OK] A borrower can return a book.
-- [] A borrower can check the books they currently have.
-- [] The system should keep track of due dates for the books and list books that are overdue.
+- [OK] A borrower can check the books they currently have.
+- [OK] The system should keep track of due dates for the books and list books that are overdue.
 
 > Ensure that user inputs are validated to prevent SQL injection or other potential security threats.
 

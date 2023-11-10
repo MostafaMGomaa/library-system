@@ -6,6 +6,7 @@ const {
   getOneBorrowedBook,
   updateOneBorrowedBook,
   deleteOneBorrowedBook,
+  getOverdueBooks,
 } = require('../controllers/borrowedController');
 const { protect, restrictTo } = require('../helpers/auth');
 const { handleInputError } = require('../helpers/middlewares');
@@ -13,6 +14,8 @@ const { handleInputError } = require('../helpers/middlewares');
 router.use(protect);
 router.use(restrictTo('admin'));
 router.route('/').get(getAllBorrowedBooks);
+
+router.get('/overdue', getOverdueBooks);
 
 router
   .route('/:id')
@@ -26,7 +29,11 @@ router
       .optional()
       .isInt()
       .withMessage('Borrower id must be an integer'),
-    body('due_date').optional().isDate().withMessage('Due date must be a date'),
+    body('due_date')
+      .optional()
+      .isDate()
+      .withMessage('Return date must be a date'),
+
     body('return_date')
       .optional()
       .isDate()
