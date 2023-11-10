@@ -143,7 +143,6 @@ exports.userBorrowedBook = asyncHandler(async (req, res, next) => {
 });
 
 exports.setUserId = (req, res, next) => {
-  console.log('HI');
   if (!req.params.id) req.params.id = req.user.id;
   next();
 };

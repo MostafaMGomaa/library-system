@@ -9,6 +9,8 @@ The Library Management System is a software application designed to manage books
 - [Database Diagram](#database-diagram)
 - [API](#api)
 - [Schema](#schema)
+- [Notes](#notes)
+- [Testing](#testing)
 
 ## Technologies Used
 
@@ -133,3 +135,15 @@ docker-compose up --build
 | Return Date | DATETIME          |
 | Due Date    | DATETIME          |
 | Is Return   | BOOLEAN           |
+
+## Notes
+
+- I am currently using a normal, non-full-text index in the books schema for columns such as title, author, and ISBN. However, it's worth noting that implementing a full-text index has a significant impact on performance.
+  ![Book Indexes](./imgs/books_indexes.png)
+- I have disabled authorization on APIs that return Excel sheets to allow you to test them in a browser.
+- I have completed all the tasks and bonuses in the assessment.
+
+## Testing
+
+You can test the API using the attached Postman collection, which includes examples.
+[Postman Collection](./library.postman_collection.json)

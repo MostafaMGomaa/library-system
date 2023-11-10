@@ -12,7 +12,7 @@ const { protect, restrictTo } = require('../helpers/auth');
 const { handleInputError } = require('../helpers/middlewares');
 
 router.use(protect);
-router.use(restrictTo('admin'));
+// router.use(restrictTo('admin'));
 router.route('/').get(getAllBorrowedBooks);
 
 router.get('/overdue', getOverdueBooks);

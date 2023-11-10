@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const sanitizer = require('perfect-express-sanitizer');
 
@@ -22,13 +21,6 @@ app.use(cookieParser());
 app.use(cors());
 // Set security HTPP headers.
 app.use(helmet());
-
-// Each ip can sent only 250 request per hour
-const limiter = rateLimit({
-  max: 250,
-  windowMs: 60 * 60 * 1000,
-  message: 'Too many request from this ip, please try agian in an hour.',
-});
 
 // Data sanitization against XSS and SQL injection.
 app.use(

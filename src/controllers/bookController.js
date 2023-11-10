@@ -83,6 +83,7 @@ exports.returnBorrowedBook = asyncHandler(async (req, res, next) => {
       book.available_quantity += 1;
       // Set due date
       borrowedBook.return_date = Date.now();
+      borrowedBook.isReturn = true;
       await borrowedBook.save();
       return borrowedBook;
     });

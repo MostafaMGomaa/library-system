@@ -36,6 +36,10 @@ const BorrowedBook = DB.define(
     return_date: {
       type: DataTypes.DATE,
     },
+    isReturn: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     due_date: {
       type: DataTypes.DATE,
       allowNull: false,
