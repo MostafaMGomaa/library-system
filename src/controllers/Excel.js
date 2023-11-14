@@ -6,10 +6,11 @@ exports.createExcel = (borrowData, excelName, res, detailed = false, next) => {
   workbook.creator = 'LMS';
   workbook.lastModifiedBy = 'LMS';
   workbook.created = new Date();
-  const sheet = workbook.addWorksheet(excelName);
 
+  const sheet = workbook.addWorksheet(excelName);
   topInfo(sheet);
   borrowColumns(sheet, detailed);
+
   let RowNumber = 3;
   borrowData.forEach((element) => {
     borrowRowData(
@@ -26,6 +27,7 @@ exports.createExcel = (borrowData, excelName, res, detailed = false, next) => {
       detailed
     );
   });
+
   setHeaders(res, excelName);
   workbook.xlsx.write(res);
 };
@@ -81,6 +83,7 @@ const section_topInfo_borders = (sheet, lineNum) => {
     };
   });
 };
+
 const setHeaders = (res, excelName) => {
   res.setHeader(
     'Content-Type',
@@ -91,6 +94,7 @@ const setHeaders = (res, excelName) => {
     `attachment;filename=` + `${excelName}.xlsx`
   );
 };
+
 const borrowColumns = (sheet, detailed) => {
   let details = [];
   if (detailed) details = ['Book Name', 'Borrower Name'];

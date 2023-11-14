@@ -23,9 +23,9 @@ class Email {
     return await this.send({
       from: this.from,
       to: this.to,
-      subject: 'Welcome in Print Mate',
-      text: 'Welcome in print-mate',
-      html: `<div><h1>Print Mate</h1><center><p>Welcome to our Family!</p></center></div>`,
+      subject: 'Welcome in LMS',
+      text: 'Welcome in LMS',
+      html: `<div><h1>LMS</h1><center><p>Welcome to our Family!</p></center></div>`,
     });
   }
 
@@ -35,7 +35,7 @@ class Email {
       to: this.to,
       subject: 'Password reset token',
       text: `Your password reset token is ${this.url} (valid for only 10 minutes)`,
-      html: `<div><h1>Print Mate</h1>
+      html: `<div><h1>LMS</h1>
                     <center>
                      <p>Your password reset token is ${this.url} (valid for only 10 minutes)</p>
                     </center>
